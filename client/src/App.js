@@ -7,7 +7,7 @@ import { SongEdit } from "./components/SongEdit";
 import {
   FirebaseAuthProvider
 } from "react-admin-firebase"
-
+import VotingCard from "./components/VotingCard"
 const firebaseConfig = {
   apiKey: "AIzaSyB2vyjZwRQJEiFxAC6x32Wqm-4FG5ABkf0",
   authDomain: "songvotingplatform.firebaseapp.com",
@@ -20,10 +20,14 @@ const firebaseConfig = {
 
 FirebaseAuthProvider = FirebaseAuthProvider(firebaseConfig);
 function App(){
+  
   return (
-    <Admin authProvider={FirebaseAuthProvider} dataProvider={restProvider("http://localhost:3000")}>
-      <Resource name="songs" list={SongList} edit={SongEdit} create={SongCreate}/>
-    </Admin>
+  <VotingCard />
+    // <Admin authProvider={FirebaseAuthProvider} dataProvider={restProvider("http://localhost:3000")}>
+      
+    //   <Resource name="songs" list={SongList} edit={SongEdit} create={SongCreate}/>
+      
+    // </Admin>
   )
 }
 

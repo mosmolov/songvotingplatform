@@ -1,12 +1,6 @@
 {
   "songs": [
     {
-      "id": "1",
-      "artist": "Bruno Mars",
-      "title": "Uptown Funk",
-      "votes": 0
-    },
-    {
       "id": "2",
       "artist": "Katy Perry",
       "title": "ET",
@@ -23,6 +17,12 @@
       "title": "It Runs Through Me",
       "artist": "Tom Misch",
       "votes": 0
+    },
+    {
+      "id": "n7w7Ld2",
+      "artist": "Jay-Z",
+      "title": "Feeling It",
+      "votes": 10
     }
   ]
 }

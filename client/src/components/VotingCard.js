@@ -1,6 +1,6 @@
 import { useEffect, useState, React } from "react";
 import { Card, Button } from "react-bootstrap";
-
+import history from '../history'
 function VotingCard(props) {
   let [songs, setSongs] = useState([]);
   const [error, setError] = useState(null);
@@ -50,6 +50,7 @@ function incrementVoteCount(id)
             </Card>
           ))}
       </ul>
+      <Button onClick={() => history.push('/Admin')} variant="success">Admin? Login</Button>
     </div>
   );
 }

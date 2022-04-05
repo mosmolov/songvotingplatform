@@ -6,6 +6,7 @@ export const SongList = (props) => (
       <TextField source="id" />
       <TextField source="title" />
       <TextField source="artist" />
+      <TextField source="votes" />
       <EditButton basePath="/songs" />
       <DeleteButton basePath="/songs" />
     </Datagrid>

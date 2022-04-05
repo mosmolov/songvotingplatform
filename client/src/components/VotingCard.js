@@ -1,8 +1,11 @@
 import { useEffect, useState, React } from "react";
 import { Card, Button } from "react-bootstrap";
-import history from '../history'
+import history from '../history';
+
+
 function VotingCard(props) {
   let [songs, setSongs] = useState([]);
+  let [voted, setVoted] = useState(false);
   const [error, setError] = useState(null);
   useEffect(() => {
     fetch("http://localhost:3001/songs")
@@ -14,8 +17,8 @@ function VotingCard(props) {
         setError(err.message);
         setSongs(null);
       })
-      
-  }, []);
+      window.localStorage.setItem('voted', voted);
+  }, [voted]);
 function incrementVoteCount(id)
 {
     songs = songs.map((song) => {
@@ -32,7 +35,7 @@ function incrementVoteCount(id)
                     "votes": song.votes++
                 })
             })
-            
+            window.localStorage.setItem('voted', true);
         }
         return song;
     })
@@ -46,7 +49,7 @@ function incrementVoteCount(id)
             <Card key={id}>
                 <Card.Title>{title} by {artist}</Card.Title>
                 <Card.Body>{votes}</Card.Body>
-                <Button variant="success" onClick={() => incrementVoteCount(id)}>Vote</Button>
+                <Button variant="success" disabled={window.localStorage.getItem('voted')} onClick={() => incrementVoteCount(id)}>Vote</Button>
             </Card>
           ))}
       </ul>

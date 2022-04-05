@@ -4,25 +4,25 @@
       "id": "2",
       "artist": "Katy Perry",
       "title": "ET",
-      "votes": 4
+      "votes": 8
     },
     {
       "id": "3",
-      "title": "Rap God",
       "artist": "Eminem",
-      "votes": 0
+      "title": "Rap God",
+      "votes": 8
     },
     {
       "id": "4",
-      "title": "It Runs Through Me",
       "artist": "Tom Misch",
-      "votes": 0
+      "title": "It Runs Through Me",
+      "votes": 10
     },
     {
       "id": "n7w7Ld2",
       "artist": "Jay-Z",
       "title": "Feeling It",
-      "votes": 10
+      "votes": 14
     }
   ]
 }

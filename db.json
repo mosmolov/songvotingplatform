@@ -4,47 +4,33 @@
       "id": "2",
       "artist": "Katy Perry",
       "title": "ET",
-      "votes": 22
+      "votes": 0
     },
     {
       "id": "3",
       "artist": "Eminem",
       "title": "Rap God",
-      "votes": 8
+      "votes": 0
     },
     {
       "id": "4",
       "artist": "Tom Misch",
       "title": "It Runs Through Me",
-      "votes": 13
+      "votes": 0
     },
     {
       "id": "n7w7Ld2",
       "artist": "Jay-Z",
       "title": "Feeling It",
-      "votes": 16
+      "votes": 4
     }
   ],
-  "selectedSongs": [
-    [
-      {
-        "id": "n7w7Ld2",
-        "artist": "Jay-Z",
-        "title": "Feeling It",
-        "votes": 14
-      },
-      {
-        "id": "4",
-        "artist": "Tom Misch",
-        "title": "It Runs Through Me",
-        "votes": 10
-      },
-      {
-        "id": "2",
-        "artist": "Katy Perry",
-        "title": "ET",
-        "votes": 19
-      }
-    ]
+  "selectedSongs": [],
+  "suggestions": [
+    {
+      "title": "Industry Baby",
+      "artist": "Lil Nas X",
+      "id": 1
+    }
   ]
 }

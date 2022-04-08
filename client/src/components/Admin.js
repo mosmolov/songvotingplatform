@@ -4,6 +4,9 @@ import restProvider from 'ra-data-simple-rest'
 import { SongList } from "./SongList";
 import { SongCreate } from "./SongCreate";
 import { SongEdit } from "./SongEdit";
+import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import SuggestionIcon from "@material-ui/icons/SpeakerOutlined";
+import {SuggestionList} from "./SuggestionList";
 import {
   FirebaseAuthProvider
 } from "react-admin-firebase"
@@ -22,9 +25,8 @@ function AdminPanel(){
   
   return (
     <Admin authProvider={FirebaseAuthProvider} dataProvider={restProvider("http://localhost:3000")}>
-      
-      <Resource name="songs" list={SongList} edit={SongEdit} create={SongCreate}/>
-      
+      <Resource icon={MusicNoteIcon} name="songs" list={SongList} edit={SongEdit} create={SongCreate}/>
+      <Resource icon={SuggestionIcon} title="Suggested Songs" name="suggestions" list={SuggestionList}/>
     </Admin>
   )
 }

@@ -23,14 +23,26 @@
       "artist": "Jay-Z",
       "title": "Feeling It",
       "votes": 4
+    },
+    {
+      "selectedSongs": [],
+      "id": "UwdA9lX"
+    },
+    {
+      "selectedSongs": [],
+      "id": "hQ2xHL5"
     }
   ],
-  "selectedSongs": [],
   "suggestions": [
     {
       "title": "Industry Baby",
       "artist": "Lil Nas X",
       "id": 1
+    },
+    {
+      "title": "Stayin' Alive",
+      "artist": "Bee Gees",
+      "id": 2
     }
   ]
 }

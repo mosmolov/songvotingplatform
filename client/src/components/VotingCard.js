@@ -11,7 +11,7 @@ function VotingCard(props) {
     fetch("http://localhost:3001/selectedSongs")
       .then((response) => response.json())
       .then((data) => {
-        setSongs(data);
+        setSongs(data[0]);
       })
       .catch((err) => setError(err));
   }, []);

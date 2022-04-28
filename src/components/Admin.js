@@ -7,17 +7,19 @@ import { SongEdit } from "./SongEdit";
 // import MusicNoteIcon from "@material-ui/icons/MusicNote";
 // import SuggestionIcon from "@material-ui/icons/SpeakerOutlined";
 // import { SuggestionList } from "./SuggestionList";
+import { authProvider, httpClient } from "../Auth";
 function AdminPanel() {
     return (
       <Admin
-        dataProvider={lb4Provider("http://localhost:4000")}
+        dataProvider={lb4Provider(process.env.REACT_APP_API_URL, httpClient)}
+        authProvider={authProvider}
       >
         <Resource
         //   icon={MusicNoteIcon}
           name="songs"
           list={SongList}
-        //   edit={SongEdit}
-        //   create={SongCreate}
+          edit={SongEdit}
+          create={SongCreate}
         />
         {/* <Resource
           icon={SuggestionIcon}

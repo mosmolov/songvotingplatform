@@ -1,11 +1,9 @@
 import React from 'react';
-import './App.css';
-import Routes from './Routes';
-
+import AdminPanel from "./components/Admin";
 function App() {
   return (
     <div className="App">
-      <Routes />
+      <AdminPanel />
     </div>
   );
 }

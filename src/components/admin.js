@@ -4,6 +4,7 @@ import lb4Provider from "react-admin-lb4";
 import { SongList } from "./songlist";
 import { SongCreate } from "./songcreate";
 import { SongEdit } from "./songedit";
+import { VotingCard } from "./votingcard";
 // import MusicNoteIcon from "@material-ui/icons/MusicNote";
 // import SuggestionIcon from "@material-ui/icons/SpeakerOutlined";
 // import { SuggestionList } from "./SuggestionList";
@@ -13,7 +14,9 @@ function AdminPanel() {
       <Admin
         dataProvider={lb4Provider(process.env.REACT_APP_API_URL, httpClient)}
         authProvider={authProvider}
+        basename="/admin"
       >
+        
         <Resource
         //   icon={MusicNoteIcon}
           name="songs"

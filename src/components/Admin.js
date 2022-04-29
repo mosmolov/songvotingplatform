@@ -1,13 +1,13 @@
 import React from "react";
 import { Admin, Resource } from "react-admin";
 import lb4Provider from "react-admin-lb4";
-import { SongList } from "./SongList";
-import { SongCreate } from "./SongCreate";
-import { SongEdit } from "./SongEdit";
+import { SongList } from "./songlist";
+import { SongCreate } from "./songcreate";
+import { SongEdit } from "./songedit";
 // import MusicNoteIcon from "@material-ui/icons/MusicNote";
 // import SuggestionIcon from "@material-ui/icons/SpeakerOutlined";
 // import { SuggestionList } from "./SuggestionList";
-import { authProvider, httpClient } from "../Auth";
+import { authProvider, httpClient } from "../auth";
 function AdminPanel() {
     return (
       <Admin

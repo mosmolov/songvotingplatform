@@ -1,39 +1,39 @@
 import { useEffect, useState, React } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useLogin } from "react-admin";
 function VotingCard(props) {
   let [songs, setSongs] = useState([]);
-  const [error, setError] = useState(null);
 
   const selectSong = async () => {
-    let selectedSongs = [];
-    fetch(`${process.env.REACT_APP_API_URL}/songs`)
-      .then((response) => response.json())
-      .catch((err) => console.log(err))
-      .then((data) => {
-        let counter = 0;
-        while (counter < 3) {
-          let randSong = data[Math.floor(Math.random() * data.length)];
-          if (
-            selectedSongs.length === 0 ||
-            !selectedSongs.some((item) => item.id === randSong.id)
-          ) {
-            selectedSongs.push(randSong);
-            counter++;
-          }
-        }
-        setSongs(selectedSongs);
-      })
+
+    fetch(`${process.env.REACT_APP_API_URL}/selectedsongs`)
+      .then(response => response.json())
+      .then(data => setSongs(data));
       
   };
   function incrementVoteCount(id) {
+    let token = "";
+    fetch("https://song-voting-api.herokuapp.com/users/login", {
+        "headers": {
+          "accept": "application/json"
+        },
+        "body": {
+            "email": process.env.REACT_APP_USERNAME,
+            "password": process.env.REACT_APP_PASSWORD
+        },
+        "method": "POST"
+      })
+      .catch(err => console.log(err))
+      .then(response => response.json())
+      .then(data => token = data.token);
+    
     songs = songs.map((song) => {
       if (song.id === id) {
         fetch(`https://song-voting-api.herokuapp.com/selectedSongs/${id}`, {
           method: "PUT",
           headers: {
             "Content-type": "application/json; charset=UTF-8",
+            "Authorization": `Bearer ${token}`
           },
           body: JSON.stringify({
             id: id,

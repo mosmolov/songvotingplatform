@@ -27,23 +27,15 @@ const postSelectedSongs = async(selectedSongs) => {
     selectedSongs.forEach(song => {
         song.votes = 0;
     })
-    console.log(selectedSongs);
     let token = "";
     const response = await fetch("https://song-voting-api.herokuapp.com/users/login", {
         "headers": {
-          "accept": "application/json",
-          "accept-language": "en-US,en;q=0.9",
-          "content-type": "application/json",
-          "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"100\", \"Google Chrome\";v=\"100\"",
-          "sec-ch-ua-mobile": "?0",
-          "sec-ch-ua-platform": "\"macOS\"",
-          "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors",
-          "sec-fetch-site": "same-origin",
-          "Referer": "https://song-voting-api.herokuapp.com/explorer/",
-          "Referrer-Policy": "strict-origin-when-cross-origin"
+          "accept": "application/json"
         },
-        "body": "{\n  \"email\": \"admin@crsd.org\",\n  \"password\": \"123123\"\n}",
+        "body": {
+            "email": process.env.API_USERNAME,
+            "password": process.env.API_PASSWORD
+        },
         "method": "POST"
       }).catch(err => console.log(err));
     token = await response.json()

@@ -6,7 +6,6 @@ export const SongCreate = (props) => {
         <SimpleForm>
             <TextInput source="title"/>
             <TextInput source="artist"/>
-            <NumberInput defaultValue={0} disabled={true} source="votes"/>
         </SimpleForm>
     </Create>
     )

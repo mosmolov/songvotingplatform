@@ -1,13 +1,14 @@
 import { List, Datagrid, TextField, EditButton, DeleteButton } from "react-admin";
 
-export const SongList = (props) => (
+export const SelectedSongList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
       <TextField source="title" />
       <TextField source="artist" />
-      <EditButton basePath="/songs" />
-      <DeleteButton basePath="/songs" />
+      <TextField source="votes" />
+      <EditButton basePath="/selectedsongs" />
+      <DeleteButton basePath="/selectedsongs" />
     </Datagrid>
   </List>
 );

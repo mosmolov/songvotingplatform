@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField, EditButton, DeleteButton } from "react-admin";
+import { List, Datagrid, TextField, DeleteButton } from "react-admin";
 
 export const SelectedSongList = (props) => (
   <List {...props}>
@@ -7,8 +7,7 @@ export const SelectedSongList = (props) => (
       <TextField source="title" />
       <TextField source="artist" />
       <TextField source="votes" />
-      <EditButton basePath="/selectedsongs" />
-      <DeleteButton basePath="/selectedsongs" />
+      <DeleteButton basepath="/selectedsongs" />
     </Datagrid>
   </List>
 );

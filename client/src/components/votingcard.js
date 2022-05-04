@@ -1,10 +1,28 @@
 import { useEffect, useState, React } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Recaptcha from "react-google-recaptcha";
 function VotingCard(props) {
-  let [songs, setSongs] = useState([]);
+  let captcha;
+  const setCaptchaRef = (ref) => {
+    if (ref) {
+      return captcha = ref;
+    }
+ };
 
-  const selectSong = async () => {
+ const resetCaptcha = () => {
+   captcha.reset();
+   setVerified(false);
+ }
+
+  const [verified, setVerified] = useState(false);
+  let [songs, setSongs] = useState([]);
+  function verifycallback(response) {
+    if (response) {
+      setVerified(true);
+    }
+  }
+  const selectSong = () => {
     fetch(`${process.env.REACT_APP_API_URL}/selectedsongs`)
       .then((response) => response.json())
       .then((data) => setSongs(data));
@@ -45,18 +63,26 @@ function VotingCard(props) {
               }),
             });
           }
+          
           return song;
         });
-        selectSong()
       });
-
-    
-    
   }
+//   const setCaptchaRef = (ref) => {
+//     if (ref) {
+//       return captcha = ref;
+//     }
+//  };
+
+//  const resetCaptcha = () => {
+//    // maybe set it till after is submitted
+//    captcha.reset();
+//  }
+
   useEffect(() => {
     selectSong();
 
-  }, []);
+  }, [songs]);
   
   return (
     <div>
@@ -67,12 +93,20 @@ function VotingCard(props) {
               {title} by {artist}
             </Card.Title>
             <Card.Body>{votes}</Card.Body>
-            <Button variant="success" onClick={() => incrementVoteCount(id)}>
+            <Button variant="success" disabled={!verified} onClick={() => {
+              incrementVoteCount(id);
+              resetCaptcha();
+            }}>
               Vote
             </Button>
           </Card>
         ))}
-      
+      <Recaptcha
+            ref={(r) => setCaptchaRef(r) }
+            sitekey={process.env.REACT_APP_SITE_KEY}
+            render="explicit"
+            onChange={verifycallback}
+          />
       <Button variant="success">
         <Link to="/admin">Admin? Login</Link>
       </Button>

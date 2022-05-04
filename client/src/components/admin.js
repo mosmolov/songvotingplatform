@@ -5,11 +5,17 @@ import { SongList } from "./songlist";
 import { SongCreate } from "./songcreate";
 import { SongEdit } from "./songedit";
 import { SelectedSongList } from "./selectedsonglist";
-// import MusicNoteIcon from "@material-ui/icons/MusicNote";
+//import MusicNoteIcon from "@material-ui/icons/MusicNote";
 // import SuggestionIcon from "@material-ui/icons/SpeakerOutlined";
 // import { SuggestionList } from "./SuggestionList";
 import { authProvider, httpClient } from "../auth";
+
 function AdminPanel() {
+  authProvider.checkAuth()
+  .catch((err) => {
+    console.log(err);
+    authProvider.logout();
+  })
     return (
       <Admin
         dataProvider={lb4Provider(process.env.REACT_APP_API_URL, httpClient)}
@@ -18,7 +24,7 @@ function AdminPanel() {
       >
         
         <Resource
-        //   icon={MusicNoteIcon}
+        //icon={MusicNoteIcon}
           name="songs"
           list={SongList}
           edit={SongEdit}

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fetch = require("node-fetch");
 const addSongs = async () => {
     const selectedSongs = await selectSong();
@@ -29,16 +30,17 @@ const postSelectedSongs = async(selectedSongs) => {
     })
     let token = "";
     const response = await fetch("https://song-voting-api.herokuapp.com/users/login", {
+        "method": "POST",
         "headers": {
-          "accept": "application/json"
+          "Content-Type": "application/json"
         },
-        "body": {
-            "email": process.env.API_USERNAME,
-            "password": process.env.API_PASSWORD
-        },
-        "method": "POST"
+        "body": JSON.stringify({
+            "email": `${process.env.API_USERNAME}`,
+            "password": `${process.env.API_PASSWORD}`
+        })
       }).catch(err => console.log(err));
-    token = await response.json()
+    token = await response.json();
+    console.log(response);
     token = token.token;
     const deleteResponse = await fetch("https://song-voting-api.herokuapp.com/selectedsongs", {
         method:"DELETE",
@@ -48,6 +50,7 @@ const postSelectedSongs = async(selectedSongs) => {
         }
     })
     let res =await deleteResponse;
+    
     const patchResponse =  await fetch("https://song-voting-api.herokuapp.com/selectedsongs", {
         method: "POST",
         headers: {

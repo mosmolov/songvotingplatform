@@ -6,14 +6,13 @@
   max-width: 35rem;
   text-align: center;
   align-items: center;
+  border-width: 15px;
+}
 
 
-}
-* {
-    padding-top: 5px;
-}
 .song-list{
     margin: 5px;
+    color: white;
 }
 .vote-button {
   margin: 5px;

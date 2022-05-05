@@ -6,7 +6,7 @@ import "../votingcard.css";
 function HomePage(props) {
   return (
     <div className="">
-      <Card className="card" >
+      <Card className="card" border="primary" bg="dark" text="light">
         <Card.Header>Vote For Your Favorite Song Below</Card.Header>
         <VotingCard />
       </Card>

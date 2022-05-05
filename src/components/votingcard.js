@@ -8,6 +8,7 @@ function VotingCard(props) {
   let [loading, setLoading] = useState(true);
   const [verified, setVerified] = useState(false);
   let [songs, setSongs] = useState([]);
+  let [captchaLoaded, setCaptchaLoaded] = useState(false);
   const setCaptchaRef = (ref) => {
     if (ref) {
       return (captcha = ref);
@@ -77,15 +78,16 @@ function VotingCard(props) {
 
   useEffect(() => {
     selectSong();
+    setTimeout(() => setCaptchaLoaded(true), 1000);
   }, []);
 
   return (
-    <Card.Body>
+    <Card.Body className="card-body">
       {songs &&
         songs.map(({ id, title, artist, votes }) =>
           !loading ? (
-            <ListGroup key={id}>
-              <ListGroup.Item className="song-list">
+            <ListGroup key={id} className="card-body" bg="dark" text="light" border="light">
+              <ListGroup.Item  className="card-body">
                 {title} by {artist}
               
                 <br />
@@ -106,13 +108,17 @@ function VotingCard(props) {
             <Spinner animation="border" />
           )
         )}
-      <Recaptcha
+      {
+        !captchaLoaded ? <Spinner animation="border" />
+        : <Recaptcha
         ref={(r) => setCaptchaRef(r)}
         sitekey={process.env.REACT_APP_SITE_KEY}
         render="explicit"
         onChange={verifycallback}
         className="captcha"
       />
+      }
+      
       <Button variant="success">
         <Link className="admin-button" to="/admin">
           Admin? Login

@@ -12,10 +12,6 @@ import { authProvider, httpClient } from "../auth";
 
 function AdminPanel() {
   authProvider.checkAuth()
-  .catch((err) => {
-    console.log(err);
-    authProvider.logout();
-  })
     return (
       <Admin
         dataProvider={lb4Provider(process.env.REACT_APP_API_URL, httpClient)}

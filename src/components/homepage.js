@@ -5,9 +5,9 @@ import "react-bootstrap";
 import "../votingcard.css";
 function HomePage(props) {
   return (
-    <div className="">
-      <Card className="card" border="primary" bg="dark" text="light">
-        <Card.Header>Vote For Your Favorite Song Below</Card.Header>
+    <div className="home-page">
+      <Card className="card" bg="transparent" border="light" text="light">
+      <Card.Title className="card-title">Vote For Your Favorite Song Below</Card.Title>
         <VotingCard />
       </Card>
     </div>

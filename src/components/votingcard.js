@@ -85,7 +85,7 @@ function VotingCard(props) {
     <Card.Body className="card-body">
       {songs &&
         songs.map(({ id, title, artist, votes }) =>
-          !loading ? (
+          
             <ListGroup key={id} className="card-body" bg="dark" text="light" border="light">
               <ListGroup.Item  className="card-body">
                 {title} by {artist}
@@ -104,23 +104,23 @@ function VotingCard(props) {
                 </Button>
               </ListGroup.Item>
             </ListGroup>
-          ) : (
-            <Spinner animation="border" />
           )
-        )}
-      {
-        !captchaLoaded ? <Spinner animation="border" />
-        : <Recaptcha
+            
+          
+                }
+      <Recaptcha
         ref={(r) => setCaptchaRef(r)}
         sitekey={process.env.REACT_APP_SITE_KEY}
         render="explicit"
         onChange={verifycallback}
         className="captcha"
+        
       />
-      }
       
-      <Button variant="success">
-        <Link className="admin-button" to="/admin">
+      
+      
+      <Button className="admin-button" variant="success">
+        <Link style={{ color: "white" }}to="/admin">
           Admin? Login
         </Link>
       </Button>

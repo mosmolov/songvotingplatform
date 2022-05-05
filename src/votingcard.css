@@ -7,9 +7,17 @@
   text-align: center;
   align-items: center;
   border-width: 15px;
+  height: 100vh;
 }
-
-
+.card-title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.home-page{
+    background-image: url("../public/bg.jpeg");
+    
+    
+}
 .song-list{
     margin: 5px;
     color: white;
@@ -20,11 +28,10 @@
 
 .admin-button {
   color: white;
-  margin-top: 15px;
 }
 .captcha {
   align-self: center;
   margin-left: 25px;
-margin-bottom: 35px;
+margin-bottom: 10px;
   padding: 15px;
 }

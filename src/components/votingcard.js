@@ -63,20 +63,12 @@ function VotingCard(props) {
             });
           }
           window.location.reload(true);
+          fetch("https://song-voting-api.herokuapp.com/users/logout")
           return song;
         });
       });
   }
-//   const setCaptchaRef = (ref) => {
-//     if (ref) {
-//       return captcha = ref;
-//     }
-//  };
 
-//  const resetCaptcha = () => {
-//    // maybe set it till after is submitted
-//    captcha.reset();
-//  }
 
   useEffect(() => {
     selectSong();

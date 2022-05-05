@@ -44,7 +44,6 @@ function VotingCard(props) {
       .then((response) => response.json())
       .then((data) => {
         token = data.token;
-        console.log(token);
         songs = songs.map((song) => {
           if (song.id === id) {
             
@@ -63,7 +62,7 @@ function VotingCard(props) {
               }),
             });
           }
-          
+          window.location.reload(true);
           return song;
         });
       });
@@ -81,8 +80,7 @@ function VotingCard(props) {
 
   useEffect(() => {
     selectSong();
-
-  }, [songs]);
+  }, []);
   
   return (
     <div>

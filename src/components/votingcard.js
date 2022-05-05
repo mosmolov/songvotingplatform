@@ -60,13 +60,18 @@ function VotingCard(props) {
                 title: song.title,
                 votes: ++song.votes
               }),
-            });
+            })
+            
           }
-          window.location.reload(true);
-          fetch("https://song-voting-api.herokuapp.com/users/logout")
+          setTimeout(() => {
+            fetch("https://song-voting-api.herokuapp.com/users/logout")
+            window.location.reload(true);
+          }, 500)
+          
           return song;
-        });
-      });
+        })
+      })
+      
   }
 
 

@@ -2,6 +2,8 @@ import { useEffect, useState, React } from "react";
 import { Card, Button, ListGroup, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Recaptcha from "react-google-recaptcha";
+
+import { NotificationManager } from 'react-notifications';
 import "../votingcard.css";
 function VotingCard(props) {
   let captcha;
@@ -67,30 +69,28 @@ function VotingCard(props) {
                   votes: ++song.votes,
                 }),
               }
-            );
+            )
+            .catch(err => NotificationManager.error(err))
+            .then(res => NotificationManager.success("Vote Submitted!"))
           }
-          
-          return song;
+          return (
+          song
+          );
         });
       });
   }
-
+  
   useEffect(() => {
     selectSong();
   }, []);
-
-  return (
-    !loading ? 
+  return !loading ? (
     <Card.Body className="card-body">
-
-      {
-      songs &&
-        songs.map(({ id, title, artist, votes }) =>
-          
-            <ListGroup key={id} className="card-body" bg="dark" text="light" border="light">
-              <ListGroup.Item  className="card-body">
+      <ListGroup bg="dark" text="light" border="light">
+        {songs &&
+          songs.map(({ id, title, artist }) => {
+            return (
+              <ListGroup.Item key={id} className="song-list">
                 {title} by {artist}
-              
                 <br />
                 <Button
                   className="vote-button"
@@ -99,16 +99,15 @@ function VotingCard(props) {
                   onClick={() => {
                     incrementVoteCount(id);
                     resetCaptcha();
+                    
                   }}
                 >
                   Vote
                 </Button>
               </ListGroup.Item>
-            </ListGroup>
-          )}
-            
-          
-                
+            );
+          })}
+      </ListGroup>
       <Recaptcha
         ref={(r) => setCaptchaRef(r)}
         sitekey={process.env.REACT_APP_SITE_KEY}
@@ -116,18 +115,15 @@ function VotingCard(props) {
         onChange={verifycallback}
         className="captcha"
       />
-      
-      
-      
+
       <Button className="admin-button" variant="success">
-        <Link style={{ color: "white" }}to="/admin">
+        <Link style={{ color: "white" }} to="/admin">
           Admin? Login
         </Link>
       </Button>
-    
-
-    </Card.Body> : <Spinner animation="border" />
-              
+    </Card.Body>
+  ) : (
+    <Spinner animation="border" />
   );
 }
 

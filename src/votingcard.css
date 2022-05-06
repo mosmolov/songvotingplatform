@@ -8,6 +8,7 @@
   align-items: center;
   height: 90vh;
   padding-top: 30px;
+  border-radius: 25px;
 }
 .card-title{
     padding-top: 25px;
@@ -18,8 +19,10 @@
     height: 100vh;
 }
 .song-list{
-    margin: 5px;
+    margin-bottom: 10px;
     color: white;
+    
+    
 }
 .vote-button {
   margin: 5px;

@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 .card {
+  font-family: Koulen;
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
@@ -10,6 +12,11 @@
   padding-top: 30px;
   border-radius: 25px;
 }
+.list-group{
+  color:white;
+  font-size: 25px;
+  
+}
 .card-title{
     padding-top: 25px;
     padding-bottom: 10px;
@@ -19,10 +26,9 @@
     height: 100vh;
 }
 .song-list{
-    margin-bottom: 10px;
     color: white;
-    
-    
+    border: white;
+    border-style: dashed;
 }
 .vote-button {
   margin: 5px;

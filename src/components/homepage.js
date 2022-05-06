@@ -23,9 +23,8 @@ function HomePage(props) {
           scaleMobile: 1.0,
           color: 0xffffff,
           backgroundColor: 0x0,
-          points: 14.0,
           maxDistance: 24.0,
-          spacing: 13.0,
+          spacing: 16.0,
         })
       );
     }
@@ -37,7 +36,7 @@ function HomePage(props) {
   return (
     <div ref={myRef} className="home-page" id="home-page">
       <Card className="card" bg="transparent" border="light" text="light">
-        <Card.Title className="card-title">
+        <Card.Title className="card-title" style={{ fontSize: "50px" }}>
           Vote For Your Favorite Song Below
         </Card.Title>
         <VotingCard />

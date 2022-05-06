@@ -85,11 +85,11 @@ function VotingCard(props) {
   }, []);
   return !loading ? (
     <Card.Body className="card-body">
-      <ListGroup bg="dark" text="light" border="light">
+      <ListGroup bg="transparent" text="light" >
         {songs &&
           songs.map(({ id, title, artist }) => {
             return (
-              <ListGroup.Item key={id} className="song-list">
+              <ListGroup.Item key={id} className="song-list" style={{ "color": "white", background: "transparent", borderBlockColor: "white", borderColor: "white" }}>
                 {title} by {artist}
                 <br />
                 <Button

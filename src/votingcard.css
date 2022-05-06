@@ -6,17 +6,16 @@
   max-width: 35rem;
   text-align: center;
   align-items: center;
-  border-width: 15px;
-  height: 100vh;
+  height: 90vh;
+  padding-top: 30px;
 }
 .card-title{
-    padding-top: 50px;
+    padding-top: 25px;
     padding-bottom: 10px;
 }
 .home-page{
-    background-image: url("../public/bg.jpeg");
-    
-    
+    background-image: url("../public/animated-bg.mov");
+    height: 100vh;
 }
 .song-list{
     margin: 5px;

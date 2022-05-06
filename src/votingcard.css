@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
 .card {
   font-family: Koulen;
   margin-top: auto;
@@ -8,28 +9,30 @@
   max-width: 35rem;
   text-align: center;
   align-items: center;
-  height: 90vh;
-  padding-top: 30px;
-  border-radius: 25px;
 }
-.list-group{
-  color:white;
+
+.list-group {
+  color: white;
   font-size: 25px;
-  
+
 }
-.card-title{
-    padding-top: 25px;
-    padding-bottom: 10px;
+
+.card-title {
+  padding-top: 25px;
+  padding-bottom: 10px;
 }
-.home-page{
-    background-image: url("../public/bg.jpeg");
-    height: 100vh;
+
+.home-page {
+  background-image: url("../public/bg.jpeg");
+  height: 100vh;
 }
-.song-list{
-    color: white;
-    border: white;
-    border-style: dashed;
+
+.song-list {
+  color: white;
+  border: white;
+  border-style: dashed;
 }
+
 .vote-button {
   margin: 5px;
 }
@@ -37,9 +40,10 @@
 .admin-button {
   color: white;
 }
+
 .captcha {
   align-self: center;
   margin-left: 25px;
-margin-bottom: 10px;
+  margin-bottom: 10px;
   padding: 15px;
 }

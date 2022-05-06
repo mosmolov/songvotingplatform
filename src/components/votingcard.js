@@ -70,16 +70,16 @@ function VotingCard(props) {
                 }),
               }
             )
-            .catch(err => NotificationManager.error(err))
-            .then(res => NotificationManager.success("Vote Submitted!"))
+              .catch(err => NotificationManager.error(err))
+              .then(res => NotificationManager.success("Vote Submitted!"))
           }
           return (
-          song
+            song
           );
         });
       });
   }
-  
+
   useEffect(() => {
     selectSong();
   }, []);
@@ -99,7 +99,7 @@ function VotingCard(props) {
                   onClick={() => {
                     incrementVoteCount(id);
                     resetCaptcha();
-                    
+
                   }}
                 >
                   Vote

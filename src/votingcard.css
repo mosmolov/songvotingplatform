@@ -23,7 +23,7 @@
 }
 
 .home-page {
-  background-image: url("../public/bg.jpeg");
+  background-color: black;
   height: 100vh;
 }
 

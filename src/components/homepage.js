@@ -36,7 +36,7 @@ function HomePage(props) {
   return (
     <div ref={myRef} className="home-page" id="home-page">
       <Card className="card" bg="transparent" border="light" text="light">
-        <Card.Title className="card-title" style={{ fontSize: "50px" }}>
+        <Card.Title className="card-title" style={{ fontSize: "40px" }}>
           Vote For Your Favorite Song Below
         </Card.Title>
         <VotingCard />

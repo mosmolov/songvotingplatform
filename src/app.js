@@ -7,7 +7,7 @@ import { NotificationContainer } from "react-notifications"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
   }, []);
   return (
 

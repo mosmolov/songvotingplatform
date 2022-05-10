@@ -91,8 +91,6 @@ function VotingCard(props) {
             return (
               <ListGroup.Item key={id} className="song-list" style={{ "color": "white", background: "transparent", borderBlockColor: "white", borderColor: "white" }}>
                 {title} by {artist}
-                <br/>
-                Votes: {votes}
                 <br />
                 <Button
                   className="vote-button"

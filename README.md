@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Song Voting Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What Is It
+This is a React.js web application created to allow high school students to vote on which song is played over the PA system each day. Each day, a script runs that fetches 3 random songs from the API. Then, users can vote for their favorite song, and the admin can track changes and votes through the React Admin dashboard. 
+
+
+## Final Product
+Final Product Available [here](https://crnvotes.netlify.app)
+
+Check out the API [here](https://song-voting-api.herokuapp.com)
+
+The script that updates selected songs to vote on can be found [here](https://github.com/mosmolov/song-update-script)
+
+## Dependencies Used
+- react-admin
+- node-fetch
+- react-google-recaptcha
+- react-bootstrap
+- dotenv
 
 ## Available Scripts
 
@@ -39,32 +55,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

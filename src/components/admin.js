@@ -29,6 +29,7 @@ function AdminPanel() {
         <Resource 
         name="selectedsongs"
         list={SelectedSongList}
+        create={SongCreate}
         />
         {/* <Resource
           icon={SuggestionIcon}

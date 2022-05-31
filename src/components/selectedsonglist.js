@@ -8,7 +8,6 @@ export const SelectedSongList = (props) => (
       <TextField source="artist" />
       <TextField source="votes" />
       <DeleteButton basepath="/selectedsongs" />
-      <CreateButton basepath="/selectedsongs" />
     </Datagrid>
   </List>
 );

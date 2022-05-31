@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField, DeleteButton, CreateButton } from "react-admin";
+import { List, Datagrid, TextField, DeleteButton } from "react-admin";
 
 export const SelectedSongList = (props) => (
   <List {...props}>

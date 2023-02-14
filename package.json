@@ -14,7 +14,7 @@
     "material-ui-icons": "^1.0.0-beta.36",
     "node-fetch": "^3.2.10",
     "react": "^18.1.0",
-    "react-admin": "^4.0.1",
+    "react-admin": "^4.7.6",
     "react-admin-lb4": "^1.0.3",
     "react-bootstrap": "^2.3.1",
     "react-dom": "^18.1.0",
